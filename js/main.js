@@ -28,6 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         cardObserver.observe(card);
     });
 
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
     // Simple smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

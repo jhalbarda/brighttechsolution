@@ -267,17 +267,50 @@ footer {
 }
 
 /* Responsive */
+/* Mobile Menu Toggle */
+.mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+}
+
 @media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        text-align: center;
     }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-cta {
+        display: none; /* Hide top CTA on mobile to save space */
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
+
     .hero::after {
         width: 100%;
         opacity: 0.2;
     }
+
     .content-flex, .contact-container {
         flex-direction: column;
         grid-template-columns: 1fr;
