@@ -288,8 +288,8 @@ footer {
         width: 100%;
         background: var(--white);
         flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
+        padding: 1.5rem;
+        gap: 1rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         text-align: center;
     }
@@ -298,12 +298,29 @@ footer {
         display: flex;
     }
 
+    .logo {
+        font-size: 1.2rem;
+    }
+
     .nav-cta {
-        display: none; /* Hide top CTA on mobile to save space */
+        display: none;
+    }
+
+    .hero {
+        padding: 5rem 0;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 0 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
     }
 
     .hero::after {
@@ -314,5 +331,25 @@ footer {
     .content-flex, .contact-container {
         flex-direction: column;
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Specific fixes for very small screens */
+@media (max-width: 390px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
     }
 }
